@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoonPhaseView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" maximumValue="30" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ibA-Bh-Z9v">
+                                <rect key="frame" x="140" y="594" width="94" height="29"/>
+                                <connections>
+                                    <action selector="ageStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lEA-Fh-RCt"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1l-ke-X5o">
+                                <rect key="frame" x="165" y="550" width="45.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feE-3V-34k">
+                                <rect key="frame" x="0.0" y="20" width="375" height="530"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2k-Lh-Zc5" customClass="MoonPhaseView" customModule="MoonPhaseView" customModuleProvider="target">
+                                        <rect key="frame" x="67.5" y="144.5" width="240" height="240"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="LeW-1c-Ibf"/>
+                                            <constraint firstAttribute="width" constant="240" id="pdH-tT-9QL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="age">
+                                                <real key="value" value="10.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="K2k-Lh-Zc5" firstAttribute="centerX" secondItem="feE-3V-34k" secondAttribute="centerX" id="1va-iw-2de"/>
+                                    <constraint firstItem="K2k-Lh-Zc5" firstAttribute="centerY" secondItem="feE-3V-34k" secondAttribute="centerY" id="Cli-zO-SsQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="feE-3V-34k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OUS-y4-r9X"/>
+                            <constraint firstItem="ibA-Bh-Z9v" firstAttribute="top" secondItem="f1l-ke-X5o" secondAttribute="bottom" constant="20" id="Vz6-zi-nZG"/>
+                            <constraint firstItem="feE-3V-34k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xii-bE-cyo"/>
+                            <constraint firstAttribute="trailing" secondItem="feE-3V-34k" secondAttribute="trailing" id="b1U-IY-d5u"/>
+                            <constraint firstItem="f1l-ke-X5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTJ-PC-waf"/>
+                            <constraint firstItem="ibA-Bh-Z9v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="grY-Tj-LsX"/>
+                            <constraint firstItem="f1l-ke-X5o" firstAttribute="top" secondItem="feE-3V-34k" secondAttribute="bottom" id="j42-7N-SQg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ibA-Bh-Z9v" secondAttribute="bottom" constant="44" id="wv0-55-QWL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="f1l-ke-X5o" id="FM2-M3-dx5"/>
+                        <outlet property="ageStepper" destination="ibA-Bh-Z9v" id="lF3-O9-m5G"/>
+                        <outlet property="moonPhaseView" destination="K2k-Lh-Zc5" id="XVv-SM-3Xh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
+        </scene>
+    </scenes>
+</document>
